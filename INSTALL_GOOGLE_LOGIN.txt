@@ -1,0 +1,1 @@
+Google/Firebase login is not used in this edition. Customer and admin authentication use PHP sessions and MySQL email/password accounts. See README_MYSQL_SETUP_HINGLISH.txt.

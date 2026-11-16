@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details | RAINA JEWELS</title>
+  <link rel="stylesheet" href="product-details.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="raina-signature-ui.css">
+</head>
+<body>
+  <header class="details-header">
+    <a class="details-brand" href="dashboard.html"><img src="images/raina-logo.png" alt="Raina Jewels"></a>
+    <nav><a href="dashboard.html">Home</a><a href="wishlist.html">Wishlist</a><a href="cart.html">Cart</a></nav>
+  </header>
+  <main class="details-main">
+    <div class="breadcrumbs"><a href="dashboard.html">Home</a><span>/</span><span>Product Details</span></div>
+    <div id="productDetails" class="details-layout" aria-live="polite">
+      <p class="details-loading">Loading product details...</p>
+    </div>
+  </main>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="api-client.js"></script>
+    <script src="product-store.js"></script>
+    <script src="raina-sync.js"></script>
+  <script src="product-details.js"></script>
+</body>
+</html>

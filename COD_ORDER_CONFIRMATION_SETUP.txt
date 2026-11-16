@@ -1,0 +1,31 @@
+RAINA JEWELS – Cash on Delivery Order Confirmation v6
+
+WHAT'S INCLUDED
+- Checkout requires a signed-in customer before placing a COD order.
+- COD order is written to Firestore collection: orders.
+- Order stores orderNumber, uid, customer contact/address, cart snapshot, amount,
+  paymentMethod, paymentStatus, confirmationStatus, status and timestamps.
+- Customer sees an order success / pending confirmation screen after Firestore save.
+- Admin > Orders & Payments lists the order and includes a Confirmation selector.
+- Admin selecting Confirm sets confirmationStatus=Confirmed and status=Processing.
+- Admin selecting Reject sets confirmationStatus=Rejected and status=Cancelled.
+- Admin can continue updating order status (Pending, Processing, Shipped, Delivered, Cancelled).
+
+INSTALL
+1. Backup your current project.
+2. Extract this ZIP and open its root folder in VS Code.
+3. Run checkout.html using Live Server from the project root.
+4. Customer must sign in before checkout; Firestore rules already allow a signed-in
+   user to create their own orders and admin to read/update orders.
+5. In Firebase Console > Firestore > Rules, ensure the project's deployed rules
+   include the orders rule from firestore.rules in this ZIP.
+6. Sign in as admin and open Admin > Orders & Payments to confirm/reject COD orders.
+
+IMPORTANT
+- This writes COD orders directly to Firestore. Test with a low-value test order first.
+- The cart bridge currently stores a rendered cart text snapshot, not authoritative
+  product IDs/prices. Before accepting real payments or scaling production, move order
+  creation and price calculation to a trusted backend using product IDs and server prices.
+- Email/SMS/WhatsApp notifications are not configured in this version; admin confirmation
+  is stored in Firestore and visible in the admin panel.
+- This code has been statically edited; live Firebase project execution is not tested here.

@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Personal Information | RAINA JEWELS</title><link rel="stylesheet" href="account-pages.css"><link rel="stylesheet" href="raina-signature-ui.css">
+</head><body><main class="account-page"><a href="dashboard.html">← Back to RAINA JEWELS</a><h1>Personal Information</h1><section class="account-info-card"><p><b>Full Name</b><span id="profileName">Loading...</span></p><p><b>Email Address</b><span id="profileEmail">Loading...</span></p><p><b>Email Verification</b><span id="profileVerified">Loading...</span></p></section></main><script src="api-client.js"></script><script>
+(async()=>{try{const d=await RainaAPI.request("profile");const u=d.user;
+document.getElementById("profileName").textContent=u.name||"—";
+document.getElementById("profileEmail").textContent=u.email||"—";
+document.getElementById("profileVerified").textContent="MySQL account";
+}catch(e){location.replace("login.html");}})();
+</script></body></html>

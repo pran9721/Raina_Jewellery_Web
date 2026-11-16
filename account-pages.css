@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#fff8f9;color:#282323;font-family:'DM Sans',Arial,sans-serif}.account-page{width:min(760px,92%);margin:55px auto}.account-page>a{color:#b97887;text-decoration:none}.account-page h1{font-family:'Playfair Display',Georgia,serif;font-weight:500;margin:25px 0}.account-info-card{background:#fff;border:1px solid #f0e4e7;border-radius:12px;padding:22px;box-shadow:0 8px 25px #24180d0a}.account-info-card p{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #eee8e2;padding:14px 0;margin:0}.account-info-card p:last-child{border:0}.account-info-card span{color:#817779;text-align:right}.account-info-card a{color:#b97887}@media(max-width:520px){.account-info-card p{flex-direction:column;gap:6px}.account-info-card span{text-align:left}}
+/* RAINA unified blush-pink design system */
+:root{--raina-pink:#b97887;--raina-pink-dark:#9f5f70;--raina-blush:#faedf0;--raina-line:#f0e4e7}
+body{font-family:"DM Sans",Arial,sans-serif;background:#fff8f9;color:#282323}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif}
+.account-page>a,.account-info-card a{color:var(--raina-pink-dark)}
+.account-info-card{border-color:var(--raina-line);box-shadow:0 8px 25px rgba(95,45,58,.06)}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>RAINA JEWELS | Shopping Cart</title>
+    <link rel="stylesheet" href="store-pages.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="raina-signature-ui.css">
+</head>
+
+<body class="cart-page">
+    <header class="cart-topbar"><a href="dashboard.html" class="cart-logo">RAINA <span>JEWELS</span></a>
+        <h1>Shopping Cart</h1>
+        <div class="secure-note">♢ <b>100% SECURE</b></div>
+    </header>
+    <main class="cart-layout">
+        <section class="cart-left">
+            <div class="cart-heading-row">
+                <div><span class="eyebrow">YOUR SELECTION</span>
+                    <h2>Shopping Bag <small id="cartItemCount">(0 items)</small></h2>
+                </div><a href="dashboard.html">Continue shopping</a>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <section class="suggestions">
+                <div class="suggestion-heading">
+                    <div><span class="eyebrow">LITTLE EXTRAS, BIG SPARKLE</span>
+                        <h2>Make It Special</h2>
+                        <p>Lovely add-ons at pocket-friendly prices</p>
+                    </div><span class="suggestion-tag">Under ₹900</span>
+                </div>
+                <div id="cartSuggestions" class="suggestion-grid"></div>
+            </section>
+        </section>
+        <aside class="cart-right">
+            <div class="coupon-card">
+                <div class="coupon-title"><span>✧</span>
+                    <div><b>Have a coupon?</b><small>Apply a code and save on your order</small></div>
+                </div>
+                <div class="coupon-entry"><input id="couponInput" placeholder="Enter coupon code"
+                        aria-label="Coupon code"><button id="applyCoupon" type="button">APPLY</button></div>
+                <div id="couponMessage" class="coupon-message" aria-live="polite">Try <b>NEW15</b> for 15% off (up to
+                    ₹300)</div>
+                <div id="appliedCoupon" class="applied-coupon" hidden></div>
+            </div>
+            <div class="benefit-card"><span>🎁</span>
+                <div><b>Redeem a Gift Card</b><small>Use your RAINA gift card at checkout</small></div><span
+                    class="chevron">›</span>
+            </div><label class="gift-wrap-card"><input id="giftWrap" type="checkbox"><span><b>Gift wrap my
+                        items</b><small>₹50 per item · no printed invoice</small></span><strong id="giftWrapCost">+
+                    ₹0</strong></label>
+            <div class="reward-card"><span>✦ You could earn <b id="rewardPoints">0</b> RAINA Rewards</span><b
+                    id="rewardValue">₹0</b></div>
+            <section class="price-card">
+                <h3>PRICE DETAILS <span id="summaryItemCount">(0 ITEMS)</span></h3>
+                <div class="price-line"><span>Total MRP</span><b id="mrpTotal">₹0</b></div>
+                <div class="price-line saving"><span>Discount on MRP</span><b id="mrpDiscount">−₹0</b></div>
+                <div class="price-line saving" id="couponLine" hidden><span>Coupon discount</span><b
+                        id="couponDiscount">−₹0</b></div>
+                <div class="price-line"><span>Shipping charges</span><b id="shippingCost">₹0</b></div>
+                <div class="price-line" id="giftLine" hidden><span>Gift wrap</span><b id="giftLineCost">₹0</b></div>
+                <div class="shipping-hint" id="shippingHint">Add items to calculate shipping.</div>
+                <div class="grand-total"><span>Estimated Amount <small>(incl. of all taxes)</small></span><b
+                        id="grandTotal">₹0</b></div>
+                <div class="savings-banner" id="savingsBanner">Your savings will appear here</div><button
+                    class="checkout-button" id="checkoutButton" type="button">♙ &nbsp; CHECKOUT SECURELY</button>
+                <p class="checkout-note">Secure checkout · Easy 15-day returns · 6-month warranty</p>
+            </section>
+        </aside>
+    </main>
+    <script src="api-client.js"></script>
+    <script src="product-store.js"></script>
+    <script src="raina-sync.js"></script>
+    <script src="store-pages.js"></script>
+    <script>renderCartPage();</script>
+    <script src="cart-checkout-integration.js"></script>
+</body>
+
+</html>

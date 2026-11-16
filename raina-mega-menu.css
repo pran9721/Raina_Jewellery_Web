@@ -1,0 +1,79 @@
+/* RAINA JEWELS — premium hover mega navigation */
+.raina-mega-nav {
+  display:flex; align-items:center; justify-content:center; gap:0;
+  position:relative; z-index:1005; background:#fff;
+  border-top:1px solid #f0ece8; border-bottom:1px solid #eee8e3;
+  padding:0 22px; min-height:58px;
+}
+.raina-mega-nav .mega-nav-item { position:static; display:flex; align-items:stretch; }
+.raina-mega-nav .mega-nav-link {
+  display:flex; align-items:center; gap:7px; min-height:58px;
+  padding:0 17px; color:#51483f; text-decoration:none;
+  font-family:"DM Sans",Arial,sans-serif; font-size:14px; font-weight:500;
+  white-space:nowrap; transition:color .2s,background .2s;
+}
+.raina-mega-nav .mega-nav-link:hover,
+.raina-mega-nav .mega-nav-item:focus-within > .mega-nav-link {
+  color:#a87943; background:#fcfaf8;
+}
+.raina-mega-nav .mega-chevron { font-size:15px; color:#9b8b7c; }
+.raina-mega-nav .sale-link { color:#b36d75; font-weight:700; }
+.raina-mega-nav .mega-dropdown {
+  display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)) minmax(190px,1.1fr);
+  gap:34px; position:absolute; left:0; right:0; top:100%;
+  padding:30px max(5vw,30px) 34px; background:#fff;
+  border-top:1px solid #eee7e1; border-bottom:1px solid #e8ded6;
+  box-shadow:0 16px 28px rgba(38,27,18,.13);
+  opacity:0; visibility:hidden; transform:translateY(8px);
+  transition:opacity .18s ease,transform .18s ease,visibility .18s;
+  pointer-events:none;
+}
+.raina-mega-nav .mega-nav-item:hover > .mega-dropdown,
+.raina-mega-nav .mega-nav-item:focus-within > .mega-dropdown {
+  opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto;
+}
+.raina-mega-nav .mega-menu-column { display:flex; flex-direction:column; align-items:flex-start; gap:0; }
+.raina-mega-nav .mega-menu-column h3 {
+  margin:0 0 13px; color:#a87943; font:600 13px "DM Sans",Arial,sans-serif;
+  letter-spacing:1px; text-transform:uppercase;
+}
+.raina-mega-nav .mega-menu-column a {
+  display:block; padding:7px 0; color:#514a45; text-decoration:none;
+  font:14px "DM Sans",Arial,sans-serif; transition:color .2s, padding .2s;
+}
+.raina-mega-nav .mega-menu-column a:hover { color:#b87982; padding-left:5px; }
+.raina-mega-nav .mega-feature {
+  min-height:180px; padding:25px; display:flex; flex-direction:column;
+  justify-content:center; gap:12px; text-decoration:none;
+  background:linear-gradient(135deg,#f8eee9,#f4e5df);
+  color:#57463f;
+}
+.raina-mega-nav .mega-feature span { font-size:10px; letter-spacing:2px; color:#a87943; }
+.raina-mega-nav .mega-feature strong { font:25px Georgia,serif; font-weight:400; line-height:1.25; }
+.raina-mega-nav .mega-feature em { font:12px "DM Sans",Arial,sans-serif; font-style:normal; color:#9b6870; }
+.raina-mega-nav .compact-dropdown { grid-template-columns:minmax(200px,300px); left:auto; right:20px; width:320px; padding:25px 30px; }
+@media (min-width:761px) {
+  .raina-mega-nav { flex-wrap:nowrap; }
+}
+@media (max-width:1100px) and (min-width:761px) {
+  .raina-mega-nav { justify-content:flex-start; overflow:visible; }
+  .raina-mega-nav .mega-nav-link { padding:0 10px; font-size:12px; }
+}
+@media (max-width:760px) {
+  .raina-mega-nav { display:none; position:absolute; top:100%; left:0; right:0; padding:8px 18px 18px; max-height:78vh; overflow-y:auto; align-items:stretch; flex-direction:column; background:#fff; box-shadow:0 14px 22px rgba(0,0,0,.12); }
+  .raina-mega-nav.is-open { display:flex; }
+  .raina-mega-nav .mega-nav-item { display:block; border-bottom:1px solid #f0eae5; }
+  .raina-mega-nav .mega-nav-link { min-height:45px; width:100%; justify-content:space-between; padding:0 5px; }
+  .raina-mega-nav .mega-dropdown,
+  .raina-mega-nav .compact-dropdown {
+    display:none; position:static; width:100%; padding:8px 12px 15px;
+    grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 20px;
+    opacity:1; visibility:visible; transform:none; pointer-events:auto;
+    box-shadow:none; border:0; background:#fcfaf8;
+  }
+  .raina-mega-nav .mega-nav-item:hover > .mega-dropdown,
+  .raina-mega-nav .mega-nav-item:focus-within > .mega-dropdown { display:grid; }
+  .raina-mega-nav .mega-feature { display:none; }
+  .raina-mega-nav .mega-menu-column h3 { font-size:11px; }
+  .raina-mega-nav .mega-menu-column a { font-size:12px; padding:6px 0; }
+}

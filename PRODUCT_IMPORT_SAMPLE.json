@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Gold Plated Necklace",
+    "price": 1999,
+    "mrp": 2999,
+    "category": "Necklaces",
+    "stock": 20,
+    "description": "Beautiful gold plated necklace",
+    "image_urls": ["uploads/products/necklace.jpg"]
+  },
+  {
+    "name": "Pearl Earrings",
+    "price": 899,
+    "mrp": 1499,
+    "category": "Earrings",
+    "stock": 15,
+    "description": "Elegant pearl earrings",
+    "image_urls": []
+  }
+]

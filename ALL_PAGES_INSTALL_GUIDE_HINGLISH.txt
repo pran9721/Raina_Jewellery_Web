@@ -1,0 +1,63 @@
+RAINA JEWELS – ALL PAGES PACKAGE
+================================
+
+This package is based on the uploaded raina_jewels.odt database structure and the existing RAINA JEWELS PHP/MySQL project.
+
+PAGES INCLUDED
+--------------
+Existing customer/store pages retained:
+- dashboard.html (home)
+- shop.html
+- product-details.html
+- cart.html
+- checkout.html
+- login.html (login/signup flow)
+- personal-information.html (account profile)
+- orders.html
+- wishlist.html
+- payment-return.html (payment return/result handling)
+- admin.html and admin/index.html (admin panel)
+
+New pages added:
+- addresses.html (database-backed saved address management)
+- about.html
+- contact.html (stores enquiries in contact_messages)
+- privacy-policy.html
+- terms.html
+- shipping-policy.html
+- refund-policy.html
+
+Shared styling:
+- extra-pages.css
+
+DATABASE SOURCE NOTES
+---------------------
+The uploaded ODT lists these tables: addresses, cart_items, categories, contact_messages,
+login_events, orders, order_items, payments, products, users.
+The new address page uses the addresses columns in the ODT.
+The contact form stores messages in contact_messages.
+
+The existing PHP API also refers to wishlist, banners, coupons and newsletter_subscribers,
+which are NOT listed in the uploaded ODT. A migration file is included to create those
+supporting tables and to add payments.provider / payments.provider_reference only when absent.
+Run RAINA_EXTRA_TABLES_MIGRATION.sql after selecting the raina_jewels database.
+
+INSTALL
+-------
+1. Backup your current RAINA_JEWELS folder and database first.
+2. Extract this ZIP.
+3. Copy/replace the extracted RAINA_JEWELS project into C:\xampp\htdocs\RAINA_JEWELS.
+4. Preserve your own api/config/database.php and api/config/cashfree.php credentials.
+5. In phpMyAdmin, select raina_jewels and run RAINA_EXTRA_TABLES_MIGRATION.sql.
+6. Start Apache and MySQL.
+7. Open http://localhost/RAINA_JEWELS/ or http://localhost/RAINA_JEWELS/dashboard.html.
+
+IMPORTANT
+---------
+- This is a local integration package; it has not been tested against your live XAMPP database.
+- Cashfree real-money payments must remain disabled until your merchant Production account is approved,
+  the website is hosted on a public HTTPS domain, and API/webhook flow is verified end-to-end.
+- Never upload cashfree.php with live secrets to a public repository.
+- The uploaded ODT does not contain design specifications; new informational pages use the existing
+  RAINA blush/pink visual direction and generic policy text. Review and customize business address,
+  contact details, shipping timelines and actual refund/return terms before publishing.

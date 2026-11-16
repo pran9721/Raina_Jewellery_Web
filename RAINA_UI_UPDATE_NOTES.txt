@@ -1,0 +1,1 @@
+RAINA JEWELS UI refresh. Shared typography and styling are loaded from raina-signature-ui.css. The current application backend is PHP + MySQL; see README_MYSQL_SETUP_HINGLISH.txt for setup.

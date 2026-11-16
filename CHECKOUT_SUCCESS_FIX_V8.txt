@@ -1,0 +1,23 @@
+RAINA JEWELS CHECKOUT SUCCESS FIX v8
+
+Changes:
+- Removed stray terminal command text after the closing HTML tag in checkout.html.
+- Cash on Delivery is selected by default; UPI is optional.
+- Checkout now displays a clear "saving COD order" message.
+- Success screen is shown only after Firestore confirms addDoc() succeeded.
+- On failure, checkout displays the Firebase error code/message and restores the button.
+- The admin orders collection and admin confirmation UI are retained.
+
+Install:
+1. Backup current project.
+2. Extract this ZIP and open the extracted root in VS Code.
+3. Run root checkout.html via Live Server.
+4. Make sure Firebase Console > Firestore Database has a default database in project raina-jewellery.
+5. Publish the orders permissions from firestore.rules.
+6. Sign in as a customer and submit a test COD order.
+7. Verify Firestore > Data > orders, then Admin > Orders & Payments.
+
+Important:
+If Firestore reports "Database '(default)' not found", a front-end change cannot create the database.
+Create/verify the default database in the SAME Firebase project whose projectId is raina-jewellery.
+The order success screen intentionally does not show until Firestore write succeeds.

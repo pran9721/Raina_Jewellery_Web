@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAINA JEWELLERY | Jewellery Account</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="login.css">
+<style>
+.google-signin-btn{width:100%;min-height:48px;margin-top:12px;border:1px solid #d9d2c8;border-radius:6px;background:#fff;color:#292421;display:flex;align-items:center;justify-content:center;gap:11px;font:500 14px 'Poppins',sans-serif;cursor:pointer;transition:.2s}
+.google-signin-btn:hover{background:#faf7f2;border-color:#b58a43}
+.google-signin-btn:disabled{opacity:.6;cursor:wait}
+.google-signin-btn img{width:19px;height:19px}
+.or-divider{display:flex;align-items:center;gap:12px;margin:17px 0 3px;color:#93877c;font:11px 'Poppins',sans-serif;letter-spacing:1px}
+.or-divider:before,.or-divider:after{content:"";height:1px;background:#e4ddd4;flex:1}
+</style>
+
+<style>
+.google-spinner{display:inline-block;width:15px;height:15px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:rainaSpin .7s linear infinite;vertical-align:middle;margin-right:8px}
+@keyframes rainaSpin{to{transform:rotate(360deg)}}
+</style>
+<link rel="stylesheet" href="raina-signature-ui.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="visual">
+
+        <div class="logo">RAINA JEWELLERY.</div>
+
+        <div class="visual-content">
+            <h1>Elegance<br>That Lasts<br>Forever.</h1>
+            <p>
+                Discover timeless jewellery crafted
+                with passion, elegance and love.
+            </p>
+        </div>
+
+        <div class="visual-footer">
+            CRAFTED FOR YOUR MOMENTS
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="form-section">
+
+        <div class="form-logo">LUXORA.</div>
+
+        <div class="form-heading">
+            <h2 id="heading">Welcome Back</h2>
+            <p id="subtitle">Sign in to explore your favourite collections.</p>
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+
+            <button class="tab active" id="loginTab">
+                LOGIN
+            </button>
+
+            <button class="tab" id="signupTab">
+                SIGN UP
+            </button>
+
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form class="form active" id="loginForm">
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="loginEmail"
+                placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+
+                <div class="password-box">
+                    <input type="password" id="loginPassword"
+                    placeholder="Enter your password" minlength="8" required>
+
+                    <button type="button" class="toggle-password"
+                    data-target="loginPassword">SHOW</button>
+                </div>
+            </div>
+
+            <div class="form-options">
+
+                <label class="remember">
+                    <input type="checkbox" id="remember">
+                    Remember me
+                </label>
+
+                <a href="#" id="forgotLink">Forgot Password?</a>
+
+            </div>
+
+            <button type="submit" class="submit-btn">
+                SIGN IN
+            </button>
+
+
+            <div class="message" id="loginMessage"
+            role="status" aria-live="polite"></div>
+
+        </form>
+
+        <!-- SIGNUP FORM -->
+        <form class="form" id="signupForm">
+
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName"
+                placeholder="Enter your full name"
+                minlength="2" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="signupEmail"
+                placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+
+                <div class="password-box">
+                    <input type="password" id="signupPassword"
+                    placeholder="Create password" minlength="8" required>
+
+                    <button type="button" class="toggle-password"
+                    data-target="signupPassword">SHOW</button>
+                </div>
+
+                <div class="strength" id="strength">
+                    Password strength: Not entered
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+
+                <div class="password-box">
+                    <input type="password" id="confirmPassword"
+                    placeholder="Confirm password" minlength="8" required>
+
+                    <button type="button" class="toggle-password"
+                    data-target="confirmPassword">SHOW</button>
+                </div>
+            </div>
+
+            <div class="terms">
+                <label>
+                    <input type="checkbox" id="terms" required>
+                    I agree to the <a href="#">Terms & Conditions</a>
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">
+                CREATE ACCOUNT
+            </button>
+
+
+            <div class="message" id="signupMessage"
+            role="status" aria-live="polite"></div>
+
+        </form>
+
+        <div class="footer-text">
+            © 2026 RAINA JEWELLERY. ALL RIGHTS RESERVED.
+        </div>
+
+    </div>
+
+</div>
+
+<script src="./api-client.js"></script>
+<script src="./login.js"></script>
+</body>
+</html>

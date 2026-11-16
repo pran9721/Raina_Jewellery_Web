@@ -1,0 +1,1 @@
+Product and banner images are uploaded to the local PHP server through api/upload.php. Files are saved under uploads/products and their URLs are stored in MySQL. The PHP upload endpoint validates file type and size and requires an authenticated admin session.

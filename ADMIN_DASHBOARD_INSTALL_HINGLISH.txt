@@ -1,0 +1,33 @@
+RAINA JEWELS ADMIN DASHBOARD UPDATE
+====================================
+
+Files updated:
+- admin.html
+- admin-root.js
+- admin-dashboard-redesign.css
+
+The admin dashboard uses the existing PHP/MySQL API and session-based admin authorization.
+The admin account is restricted by the existing backend to:
+pranshubatham0@gmail.com
+
+INSTALL:
+1. Backup your current C:\xampp\htdocs\RAINA_JEWELS folder.
+2. Extract this ZIP.
+3. Copy the contents of RAINA_JEWELS into C:\xampp\htdocs\RAINA_JEWELS, replacing files when asked.
+4. Preserve your existing api/config/database.php and api/config/cashfree.php credentials.
+5. Start Apache and MySQL.
+6. Sign in using the authorized admin account and open:
+   http://localhost/RAINA_JEWELS/admin.html
+
+LIVE DATA:
+- Revenue is calculated from orders with payment_status = Paid.
+- Total orders and customers come from the MySQL-backed orders/admin-data endpoints.
+- Pending payments excludes paid/cancelled/refunded.
+- Sales chart uses the latest seven actual order totals.
+- Status donut uses actual order_status values.
+- Recent orders and existing product/banner/customer/login-activity management remain connected.
+
+IMPORTANT:
+- No visitor analytics table exists in the current API schema, so the dashboard does not invent a visitor count.
+- The database must already have the banners and login_events tables used by the existing admin API.
+- This package has not been tested against your live local MySQL database. Back up before replacing files.

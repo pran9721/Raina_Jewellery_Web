@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAINA JEWELS | Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="raina-signature-ui.css">
+</head>
+<body>
+  <!-- Announcement strip -->
+  <div class="announcement-bar">
+    <span>RAINA JEWELS</span>
+    <span class="announcement-divider">|</span>
+    <span>Timeless Elegance, Crafted to Shine</span>
+  </div>
+
+  <!-- Main header row -->
+  <header class="site-header">
+    <div class="header-main">
+      <a href="index.html" class="brand-logo" aria-label="Raina Jewels home">
+        <img src="images/raina-logo.png" alt="Raina Jewels logo">
+      </a>
+
+      <form class="header-search" id="productSearchForm" role="search">
+        <input id="productSearchInput" type="search" placeholder='Search "Gold Jewellery"' aria-label="Search products">
+        <button type="submit" aria-label="Search products">
+          <i data-lucide="search"></i>
+        </button>
+      </form>
+
+      <div class="header-actions">
+        <button class="header-action account-trigger" type="button" id="accountOpenBtn" aria-label="Open my account" aria-haspopup="dialog" aria-expanded="false">
+          <i data-lucide="user-round"></i>
+          <span class="action-label">ACCOUNT</span>
+          <span class="account-name" id="navUserName">My Account</span>
+        </button>
+        <a class="header-action" href="wishlist.html" aria-label="Wishlist">
+          <i data-lucide="heart"></i>
+          <span class="action-label">WISHLIST</span><span class="header-count" id="wishlistCount">0</span>
+        </a>
+        <a class="header-action cart-action" href="cart.html" aria-label="Cart">
+          <span class="cart-icon-wrap"><i data-lucide="shopping-cart"></i><span class="cart-count" id="cartCount">0</span></span>
+          <span class="action-label">CART</span>
+        </a>
+      </div>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open navigation" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <!-- Mega menu navigation: hover/focus to reveal all pages and sections -->
+    <nav class="category-nav raina-mega-nav" id="categoryNav" aria-label="Main navigation">
+      <div class="mega-nav-item">
+        <a href="shop.html" class="mega-nav-link">Jewellery <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown">
+          <div class="mega-menu-column">
+            <h3>Shop by Category</h3>
+            <a href="shop.html?category=rings">Rings</a>
+            <a href="shop.html?category=earrings">Earrings</a>
+            <a href="shop.html?category=pendants">Pendants</a>
+            <a href="shop.html?category=necklaces">Necklaces</a>
+            <a href="shop.html?category=bracelets">Bracelets</a>
+            <a href="shop.html?category=bangles">Bangles</a>
+            <a href="shop.html?category=chains">Chains</a>
+            <a href="shop.html?category=anklets">Anklets</a>
+          </div>
+          <div class="mega-menu-column">
+            <h3>Shop by Style</h3>
+            <a href="shop.html?search=daily%20wear">Daily Wear</a>
+            <a href="shop.html?search=office%20wear">Office Wear</a>
+            <a href="shop.html?search=party%20wear">Party Wear</a>
+            <a href="shop.html?search=minimal">Minimal Jewellery</a>
+            <a href="shop.html?search=traditional">Traditional</a>
+            <a href="shop.html?search=modern">Modern Designs</a>
+            <a href="shop.html?search=silver">Silver Jewellery</a>
+          </div>
+          <a class="mega-feature" href="shop.html">
+            <span>THE RAINA EDIT</span><strong>Find your signature sparkle</strong><em>Explore all jewellery →</em>
+          </a>
+        </div>
+      </div>
+
+      <div class="mega-nav-item">
+        <a href="shop.html?search=women" class="mega-nav-link">Shop for Women <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown">
+          <div class="mega-menu-column"><h3>Women's Jewellery</h3>
+            <a href="shop.html?category=rings">Rings for Women</a><a href="shop.html?category=earrings">Earrings for Women</a>
+            <a href="shop.html?category=necklaces">Necklaces</a><a href="shop.html?category=bracelets">Bracelets</a>
+            <a href="shop.html?category=pendants">Pendants</a><a href="shop.html?category=bangles">Bangles</a>
+          </div>
+          <div class="mega-menu-column"><h3>Popular Edits</h3>
+            <a href="shop.html?search=best%20sellers">Best Sellers</a><a href="shop.html?search=new%20arrivals">New Arrivals</a>
+            <a href="shop.html?search=everyday">Everyday Essentials</a><a href="shop.html?search=statement">Statement Pieces</a>
+            <a href="shop.html?search=bridal">Bridal Edit</a>
+          </div>
+          <div class="mega-menu-column"><h3>Explore</h3>
+            <a href="shop.html?search=under%20500">Under ₹500</a><a href="shop.html?search=under%201000">Under ₹1,000</a>
+            <a href="shop.html?search=gifting">Gifting Collection</a><a href="shop.html">View All Women’s Jewellery →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-nav-item">
+        <a href="shop.html?category=mens-jewellery" class="mega-nav-link">Shop for Men <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown">
+          <div class="mega-menu-column"><h3>Men's Jewellery</h3>
+            <a href="shop.html?category=mens-jewellery">All Men's Jewellery</a><a href="shop.html?search=men%20chains">Chains</a>
+            <a href="shop.html?search=men%20bracelets">Bracelets</a><a href="shop.html?search=men%20rings">Rings</a>
+            <a href="shop.html?search=men%20pendants">Pendants</a>
+          </div>
+          <div class="mega-menu-column"><h3>Featured</h3>
+            <a href="shop.html?search=minimal%20men">Minimal Designs</a><a href="shop.html?search=classic%20men">Classic Collection</a>
+            <a href="shop.html?search=gifts%20for%20him">Gifts for Him</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-nav-item">
+        <a href="shop.html?category=kids" class="mega-nav-link">Shop for Kids <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown">
+          <div class="mega-menu-column"><h3>Kids Collection</h3>
+            <a href="shop.html?search=kids%20earrings">Kids Earrings</a><a href="shop.html?search=kids%20bracelets">Kids Bracelets</a>
+            <a href="shop.html?search=kids%20pendants">Kids Pendants</a><a href="shop.html?search=kids%20gifts">Gifts for Kids</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-nav-item">
+        <a href="shop.html?search=gifts" class="mega-nav-link">Gift Store <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown">
+          <div class="mega-menu-column"><h3>Shop Gifts</h3>
+            <a href="shop.html?search=birthday%20gifts">Birthday Gifts</a><a href="shop.html?search=anniversary%20gifts">Anniversary Gifts</a>
+            <a href="shop.html?search=wedding%20gifts">Wedding Gifts</a><a href="shop.html?search=gifts%20for%20her">Gifts for Her</a>
+            <a href="shop.html?search=gifts%20for%20him">Gifts for Him</a><a href="shop.html?search=personalised">Personalised Gifts</a>
+          </div>
+          <div class="mega-menu-column"><h3>By Occasion</h3>
+            <a href="shop.html?search=festive">Festive Celebrations</a><a href="shop.html?search=valentines">Valentine's Day</a>
+            <a href="shop.html?search=mothers%20day">Mother's Day</a><a href="shop.html?search=just%20because">Just Because</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-nav-item">
+        <a href="shop.html?search=gift%20cards" class="mega-nav-link">Gift Cards</a>
+      </div>
+
+      <div class="mega-nav-item">
+        <a href="shop.html?search=under%201000" class="mega-nav-link">Shop by Price <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown">
+          <div class="mega-menu-column"><h3>Shop by Budget</h3>
+            <a href="shop.html?search=under%20500">Under ₹500</a><a href="shop.html?search=500%20to%201000">₹500 – ₹1,000</a>
+            <a href="shop.html?search=1000%20to%202000">₹1,000 – ₹2,000</a><a href="shop.html?search=above%202000">Above ₹2,000</a>
+          </div>
+          <div class="mega-menu-column"><h3>Special Picks</h3>
+            <a href="shop.html?search=affordable">Affordable Favourites</a><a href="shop.html?search=premium">Premium Collection</a>
+            <a href="shop.html?search=luxury">Luxury Gifts</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-nav-item">
+        <a href="shop.html?search=collections" class="mega-nav-link">Collections <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown">
+          <div class="mega-menu-column"><h3>RAINA Collections</h3>
+            <a href="shop.html?search=new%20arrivals">New Arrivals</a><a href="shop.html?search=best%20sellers">Best Sellers</a>
+            <a href="shop.html?search=everyday%20elegance">Everyday Elegance</a><a href="shop.html?search=the%20minimalist">The Minimalist</a>
+            <a href="shop.html?search=statement">Statement Collection</a><a href="shop.html?search=bridal">Bridal Collection</a>
+          </div>
+          <div class="mega-menu-column"><h3>Materials & Looks</h3>
+            <a href="shop.html?search=silver">Silver Edit</a><a href="shop.html?search=gold%20plated">Gold Plated</a>
+            <a href="shop.html?search=pearls">Pearl Collection</a><a href="shop.html?search=stone">Stone Jewellery</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mega-nav-item"><a href="sale.html" class="mega-nav-link sale-link">Sale</a></div>
+      <div class="mega-nav-item">
+        <a href="about.html" class="mega-nav-link">About <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown compact-dropdown">
+          <div class="mega-menu-column"><h3>About RAINA</h3><a href="about.html">Our Story</a><a href="about.html#craftsmanship">Our Craftsmanship</a><a href="about.html#values">Our Values</a><a href="contact.html">Careers & Join Us</a></div>
+        </div>
+      </div>
+      <div class="mega-nav-item">
+        <a href="contact.html" class="mega-nav-link">Contact <span class="mega-chevron">⌄</span></a>
+        <div class="mega-dropdown compact-dropdown">
+          <div class="mega-menu-column"><h3>We're Here to Help</h3><a href="contact.html">Contact Support</a><a href="contact.html#faqs">FAQs</a><a href="contact.html#shipping">Shipping & Returns</a><a href="contact.html#track-order">Track Your Order</a></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Customer account side panel -->
+  <div class="account-overlay" id="accountOverlay" hidden></div>
+  <aside class="account-drawer" id="accountDrawer" role="dialog" aria-modal="true" aria-labelledby="accountDrawerTitle" aria-hidden="true">
+    <div class="account-drawer-head">
+      <div class="account-user-summary">
+        <div class="account-avatar" id="accountAvatar">R</div>
+        <div class="account-user-text">
+          <h2 id="accountDrawerTitle">Customer</h2>
+          <span class="account-email" id="accountEmail">customer@example.com</span>
+        </div>
+      </div>
+      <button class="account-close" id="accountCloseBtn" type="button" aria-label="Close account panel"><i data-lucide="x"></i></button>
+    </div>
+    <nav class="account-menu" aria-label="Account menu">
+      <a href="personal-information.html"><i data-lucide="user-round"></i><span>Personal Information</span><i data-lucide="chevron-right" class="menu-chevron"></i></a>
+      <a href="orders.html"><i data-lucide="shopping-cart"></i><span>My Orders</span><i data-lucide="chevron-right" class="menu-chevron"></i></a>
+      <a href="checkout.html"><i data-lucide="map-pin"></i><span>My Addresses</span><i data-lucide="chevron-right" class="menu-chevron"></i></a>
+      <a href="wishlist.html"><i data-lucide="heart"></i><span>My Wishlist</span><i data-lucide="chevron-right" class="menu-chevron"></i></a>
+      <a href="smart-purchase-plan.html"><i data-lucide="piggy-bank"></i><span>RAINA Smart Purchase Plan</span><i data-lucide="chevron-right" class="menu-chevron"></i></a>
+    </nav>
+    <button class="account-logout" id="accountLogoutBtn" type="button"><i data-lucide="log-out"></i><span>Log Out</span></button>
+  </aside>
+
+  <!-- Dashboard hero slider -->
+  <main class="dashboard-content">
+    <section class="hero-section" aria-label="Featured jewellery collections">
+      <div class="hero-slider" id="heroSlider">
+        <article class="hero-slide is-active" style="--hero-image:url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=2000&q=85')">
+          <div class="hero-copy"><span class="hero-eyebrow">RAINA JEWELS PRESENTS</span><h1>Elegance in Every Detail</h1><p>Discover jewellery that makes every moment unforgettable.</p><a href="shop.html" class="hero-cta">EXPLORE COLLECTION</a></div>
+        </article>
+        <article class="hero-slide" style="--hero-image:url('https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=2000&q=85')">
+          <div class="hero-copy"><span class="hero-eyebrow">TIMELESS CLASSICS</span><h1>Shine Your Own Way</h1><p>Beautiful pieces for your everyday stories.</p><a href="shop.html" class="hero-cta">SHOP THE LOOK</a></div>
+        </article>
+        <article class="hero-slide" style="--hero-image:url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=2000&q=85')">
+          <div class="hero-copy"><span class="hero-eyebrow">MADE TO BE TREASURED</span><h1>A Little More Sparkle</h1><p>Find the finishing touch for every celebration.</p><a href="shop.html" class="hero-cta">DISCOVER NOW</a></div>
+        </article>
+        <article class="hero-slide" style="--hero-image:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=2000&q=85')">
+          <div class="hero-copy"><span class="hero-eyebrow">THE GIFT EDIT</span><h1>Give Something Meaningful</h1><p>Thoughtful jewellery gifts, made to last.</p><a href="shop.html" class="hero-cta">FIND A GIFT</a></div>
+        </article>
+        <article class="hero-slide" style="--hero-image:url('https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=2000&q=85')">
+          <div class="hero-copy"><span class="hero-eyebrow">NEW SEASON, NEW YOU</span><h1>Your Style. Your Statement.</h1><p>Explore the latest favourites from Raina Jewels.</p><a href="shop.html" class="hero-cta">VIEW NEW ARRIVALS</a></div>
+        </article>
+      </div>
+      <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous banner"><i data-lucide="chevron-left"></i></button>
+      <button class="hero-arrow hero-next" id="heroNext" aria-label="Next banner"><i data-lucide="chevron-right"></i></button>
+      <div class="hero-dots" id="heroDots" aria-label="Choose banner">
+        <button class="is-active" aria-label="Show banner 1"></button><button aria-label="Show banner 2"></button><button aria-label="Show banner 3"></button><button aria-label="Show banner 4"></button><button aria-label="Show banner 5"></button>
+      </div>
+    </section>
+
+    <!-- Shop by category carousel -->
+    <section class="category-section" aria-labelledby="categoryHeading">
+      <div class="section-heading"><div><span class="section-kicker">FIND YOUR FAVOURITE</span><h2 id="categoryHeading">Shop by Category</h2></div><div class="category-controls"><button id="categoryPrev" aria-label="Scroll categories left"><i data-lucide="chevron-left"></i></button><button id="categoryNext" aria-label="Scroll categories right"><i data-lucide="chevron-right"></i></button></div></div>
+      <div class="category-track" id="categoryTrack">
+        <a class="category-card" href="shop.html?category=rings"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" alt="Rings"><span>Rings</span></a>
+        <a class="category-card" href="shop.html?category=bracelets"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=600&q=80" alt="Bracelets"><span>Bracelets</span></a>
+        <a class="category-card" href="shop.html?category=pendants"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" alt="Pendants"><span>Pendants</span></a>
+        <a class="category-card" href="shop.html?category=earrings"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Earrings"><span>Earrings</span></a>
+        <a class="category-card" href="shop.html?category=mens-jewellery"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=600&q=80" alt="Men's jewellery"><span>Men's Jewellery</span></a>
+        <a class="category-card" href="shop.html?category=anklets"><img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=80" alt="Anklets"><span>Anklets</span></a>
+        <a class="category-card" href="shop.html?category=chains"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" alt="Chains"><span>Chains</span></a>
+        <a class="category-card" href="shop.html?category=sets"><img src="https://images.unsplash.com/photo-1599459183200-59c7687a0276?auto=format&fit=crop&w=600&q=80" alt="Jewellery sets"><span>Jewellery Sets</span></a>
+      </div>
+    </section>
+
+<!-- Best deals and special offers -->
+    <section class="deal-banners" aria-label="Best deals and special offers">
+      <a class="deal-banner deal-banner-best" href="sale.html">
+        <div class="deal-banner-copy">
+          <span class="deal-eyebrow">RAINA EXCLUSIVE</span>
+          <h2>Best Deals</h2>
+          <p>Beautiful finds. Special prices.</p>
+          <span class="deal-link">EXPLORE DEALS <i data-lucide="arrow-right"></i></span>
+        </div>
+      </a>
+      <a class="deal-banner deal-banner-offer" href="sale.html">
+        <div class="deal-banner-copy">
+          <span class="deal-eyebrow">LIMITED TIME OFFER</span>
+          <h2>Offers You'll Love</h2>
+          <p>Make every moment shine for less.</p>
+          <span class="deal-link">SHOP OFFERS <i data-lucide="arrow-right"></i></span>
+        </div>
+      </a>
+    </section>
+
+
+    <!-- Featured jewellery products -->
+    <section class="products-section" aria-labelledby="productsHeading">
+      <div class="section-heading products-heading">
+        <div><span class="section-kicker">HANDPICKED FOR YOU</span><h2 id="productsHeading">Customer Favourites</h2></div>
+        <a class="view-all-link" href="shop.html">VIEW ALL <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-product-id="silver-flower-studs" role="link" tabindex="0" aria-label="View Silver Flowery Snowflake Studs details">
+          <div class="product-image-wrap"><img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=85" alt="Silver floral snowflake stud earrings"><span class="product-badge">Bestseller</span><button class="wishlist-toggle" type="button" aria-label="Add Silver Flowery Snowflake Studs to wishlist" data-wishlist="silver-flower-studs"><i data-lucide="heart"></i></button><span class="product-rating">4.9 <b>★</b> | 562</span></div>
+          <div class="product-info"><div class="price-row"><strong>₹1,999</strong><del>₹3,799</del></div><h3>Silver Flowery Snowflake Studs</h3><p class="coupon-line">Get it for <strong>₹1,799</strong> with coupon</p><button class="add-cart-btn" type="button" data-cart="silver-flower-studs">Add to Cart</button></div>
+        </article>
+        <article class="product-card" data-product-id="silver-zircon-earrings" role="link" tabindex="0" aria-label="View Silver Zircon Earrings details">
+          <div class="product-image-wrap"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=85" alt="Silver zircon earrings"><span class="product-badge">Bestseller</span><button class="wishlist-toggle" type="button" aria-label="Add Silver Zircon Earrings to wishlist" data-wishlist="silver-zircon-earrings"><i data-lucide="heart"></i></button><span class="product-rating">4.9 <b>★</b> | 336</span></div>
+          <div class="product-info"><div class="price-row"><strong>₹2,099</strong><del>₹4,699</del></div><h3>Silver Zircon Earrings</h3><p class="coupon-line">Get it for <strong>₹1,889</strong> with coupon</p><button class="add-cart-btn" type="button" data-cart="silver-zircon-earrings">Add to Cart</button></div>
+        </article>
+        <article class="product-card" data-product-id="rose-gold-deer-necklace" role="link" tabindex="0" aria-label="View Rose Gold Deer Heart Necklace details">
+          <div class="product-image-wrap"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=85" alt="Rose gold deer heart necklace"><span class="product-rating">4.9 <b>★</b> | 371</span><button class="wishlist-toggle" type="button" aria-label="Add Rose Gold Deer Heart Necklace to wishlist" data-wishlist="rose-gold-deer-necklace"><i data-lucide="heart"></i></button></div>
+          <div class="product-info"><div class="price-row"><strong>₹1,999</strong><del>₹6,199</del></div><h3>Rose Gold Deer Heart Necklace</h3><p class="coupon-line">Get it for <strong>₹1,799</strong> with coupon</p><button class="add-cart-btn" type="button" data-cart="rose-gold-deer-necklace">Add to Cart</button></div>
+        </article>
+        <article class="product-card" data-product-id="silver-solitaire-ring" role="link" tabindex="0" aria-label="View Silver Classic Solitaire Ring details">
+          <div class="product-image-wrap"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=85" alt="Silver classic solitaire ring"><span class="product-badge">Bestseller</span><button class="wishlist-toggle" type="button" aria-label="Add Silver Classic Solitaire Ring to wishlist" data-wishlist="silver-solitaire-ring"><i data-lucide="heart"></i></button><span class="product-rating">4.9 <b>★</b> | 377</span></div>
+          <div class="product-info"><div class="price-row"><strong>₹3,999</strong><del>₹8,399</del></div><h3>Silver Classic Solitaire Ring</h3><p class="coupon-line">Get it for <strong>₹3,199</strong> with coupon</p><button class="add-cart-btn" type="button" data-cart="silver-solitaire-ring">Add to Cart</button></div>
+        </article>
+      </div>
+    </section>
+  </main>
+<footer class="raina-footer">
+  <div class="footer-main">
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <a href="#reviews">Customer Reviews</a><a href="#blogs">Our Blogs</a><a href="#about">About Us</a><a href="#contact">Contact Us</a><a href="#stores">Store Locator</a><a href="#join">Join RAINA</a><a href="#gift-cards">Gift Cards</a>
+    </div>
+    <div class="footer-column">
+      <h3>Information</h3>
+      <a href="#shipping">Shipping &amp; Returns</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Service</a><a href="#faqs">FAQs &amp; Support</a><a href="#cancellation">Cancellation Policy</a><a href="#track-order">Track Your Order</a><a href="#international-shipping">International Shipping</a>
+    </div>
+    <div class="footer-column contact-column" id="contact">
+      <h3>Contact Us</h3>
+      <p>For any suggestions, queries or complaints, please contact us:</p>
+      <h4>RAINA JEWELLERY</h4>
+      <p>Customer Support</p>
+      <p>Contact: <a href="tel:+910000000000">+91 XXXXX XXXXX</a></p>
+      <p>Email: <a href="mailto:support@rainajewellery.com">support@rainajewellery.com</a></p>
+      <p>Customer Care: 10:00 AM – 6:00 PM</p>
+      <a href="#chat">Chat with us</a><a href="#support-ticket">Raise a Support Ticket</a>
+    </div>
+  </div>
+
+  <div class="footer-newsletter">
+    <div class="newsletter-box">
+      <h2>Subscribe for exclusive offers and updates!</h2>
+      <form id="rainaNewsletterForm">
+        <label class="sr-only" for="rainaNewsletterEmail">Email address</label>
+        <input id="rainaNewsletterEmail" type="email" placeholder="Enter your email" autocomplete="email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="rainaNewsletterMessage" aria-live="polite"></p>
+    </div>
+    <div class="footer-social">
+      <h3>Follow RAINA</h3>
+      <div class="social-icons">
+        <!-- Replace # with your real social profile URLs. -->
+        <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Pinterest">p</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-extra">
+    <div class="app-download">
+      <h3>Discover RAINA</h3><p>Beautiful jewellery, just a click away.</p>
+      <div class="app-buttons"><a href="#google-play">Google Play</a><a href="#app-store">App Store</a></div>
+      <p class="app-offer">Discover elegance with every order!</p>
+    </div>
+    <div class="footer-partners">
+      <h3>Explore RAINA Collections</h3>
+      <div class="partner-grid">
+        <a href="#rings">Rings</a><a href="#earrings">Earrings</a><a href="#necklaces">Necklaces</a><a href="#bracelets">Bracelets</a><a href="#pendants">Pendants</a><a href="#bangles">Bangles</a><a href="#silver">Silver</a><a href="#gifts">Gifts</a><a href="#daily-wear">Daily Wear</a><a href="#premium">Premium</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-seo">
+    <div><h4>Shop by Jewellery</h4><p>Gold Jewellery | Silver Jewellery | Diamond Jewellery | Artificial Jewellery | Daily Wear Jewellery</p></div>
+    <div><h4>Gifts &amp; Special Occasions</h4><p>Birthday Gifts | Anniversary Gifts | Wedding Gifts | Gifts for Women | Gifts for Men</p></div>
+    <div><h4>Popular Categories</h4><p>Rings for Women | Earrings for Women | Pendant Sets | Chain Necklaces | Stylish Bracelets</p></div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="payment-methods" aria-label="Payment methods"><span>VISA</span><span>Mastercard</span><span>UPI</span><span>RuPay</span><span>Cash on Delivery</span></div>
+    <p>© <span id="rainaFooterYear">2026</span> RAINA JEWELLERY. All Rights Reserved.</p>
+    <p>Designed with love by RAINA.</p>
+  </div>
+</footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
+  <script>
+    const menuToggle = document.getElementById("mobileMenuToggle");
+    const categoryNav = document.getElementById("categoryNav");
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = categoryNav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.innerHTML = isOpen
+        ? '<i data-lucide="x"></i>'
+        : '<i data-lucide="menu"></i>';
+      lucide.createIcons();
+    });
+
+    document.getElementById("productSearchForm")?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const query = document.getElementById("productSearchInput").value.trim();
+      if (query) window.location.href = `shop.html?search=${encodeURIComponent(query)}`;
+    });
+  </script>
+
+  <script>
+    // Hero slider: five banners, automatic rotation and manual controls.
+    const heroSlides = [...document.querySelectorAll(".hero-slide")];
+    const heroDotButtons = [...document.querySelectorAll("#heroDots button")];
+    let heroIndex = 0;
+    let heroTimer;
+    function showHero(index) {
+      heroIndex = (index + heroSlides.length) % heroSlides.length;
+      heroSlides.forEach((slide, i) => slide.classList.toggle("is-active", i === heroIndex));
+      heroDotButtons.forEach((dot, i) => dot.classList.toggle("is-active", i === heroIndex));
+    }
+    function restartHeroTimer() {
+      clearInterval(heroTimer);
+      heroTimer = setInterval(() => showHero(heroIndex + 1), 5000);
+    }
+    document.getElementById("heroPrev")?.addEventListener("click", () => { showHero(heroIndex - 1); restartHeroTimer(); });
+    document.getElementById("heroNext")?.addEventListener("click", () => { showHero(heroIndex + 1); restartHeroTimer(); });
+    heroDotButtons.forEach((dot, i) => dot.addEventListener("click", () => { showHero(i); restartHeroTimer(); }));
+    restartHeroTimer();
+
+    // Category carousel controls.
+    const categoryTrack = document.getElementById("categoryTrack");
+    document.getElementById("categoryPrev")?.addEventListener("click", () => categoryTrack.scrollBy({ left: -categoryTrack.clientWidth * 0.8, behavior: "smooth" }));
+    document.getElementById("categoryNext")?.addEventListener("click", () => categoryTrack.scrollBy({ left: categoryTrack.clientWidth * 0.8, behavior: "smooth" }));
+  </script>
+
+  <script src="api-client.js"></script>
+  <script src="product-store.js"></script>
+    <script src="raina-sync.js"></script>
+  <script>
+    // Render featured products from the same MySQL catalogue used by Admin and Shop.
+    (async function loadDashboardProducts(){
+      const grid=document.getElementById("productGrid");
+      if(!grid || !window.RainaAPI) return;
+      const escapeHTML=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+      try{
+        const result=await RainaAPI.request("products");
+        const items=Array.isArray(result.products)?result.products:[];
+        if(!items.length){grid.innerHTML='<p class="empty-state">Products will appear here once added from Admin Panel.</p>';return;}
+        grid.innerHTML=items.slice(0,8).map(product=>{
+          let images=[];
+          try{images=Array.isArray(product.image_urls)?product.image_urls:JSON.parse(product.image_urls||"[]");}catch(_){images=[];}
+          const id=String(product.slug||product.id);
+          const name=escapeHTML(product.name);
+          const category=escapeHTML(product.category_name||product.category||"Jewellery");
+          const price=Number(product.price)||0, mrp=Number(product.mrp)||price;
+          const image=images[0]?escapeHTML(images[0]):"";
+          const imageMarkup=image?`<img src="${image}" alt="${name}" loading="lazy">`:`<div class="image-placeholder">${category}</div>`;
+          return `<article class="product-card" data-product-id="${escapeHTML(id)}" role="link" tabindex="0" aria-label="View ${name} details">
+            <div class="product-image-wrap">${imageMarkup}<button class="wishlist-toggle" type="button" aria-label="Add ${name} to wishlist" data-wishlist="${escapeHTML(id)}"><i data-lucide="heart"></i></button></div>
+            <div class="product-info"><div class="price-row"><strong>₹${price.toLocaleString("en-IN")}</strong>${mrp>price?`<del>₹${mrp.toLocaleString("en-IN")}</del>`:""}</div><h3>${name}</h3><p class="coupon-line">${category}</p><button class="add-cart-btn" type="button" data-cart="${escapeHTML(id)}">Add to Cart</button></div>
+          </article>`;
+        }).join("");
+        if(window.lucide) window.lucide.createIcons();
+        grid.querySelectorAll(".product-card[data-product-id]").forEach(card=>{
+          const open=()=>location.href=`product-details.html?id=${encodeURIComponent(card.dataset.productId)}`;
+          card.addEventListener("click",event=>{if(!event.target.closest("button,a"))open();});
+          card.addEventListener("keydown",event=>{if(event.target===card&&(event.key==="Enter"||event.key===" ")){event.preventDefault();open();}});
+        });
+      }catch(error){console.error("Dashboard MySQL products could not load:",error);}
+    })();
+  </script>
+  <script>
+    // Open product details when any non-action area of a product card is clicked.
+    // Wishlist and Add to Cart buttons keep their own actions and do not navigate.
+    document.querySelectorAll(".product-card[data-product-id]").forEach(card => {
+      const openDetails = () => {
+        const id = card.dataset.productId;
+        window.location.href = `product-details.html?id=${encodeURIComponent(id)}`;
+      };
+      card.addEventListener("click", event => {
+        if (event.target.closest("button, a")) return;
+        openDetails();
+      });
+      card.addEventListener("keydown", event => {
+        if (event.target !== card) return;
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openDetails();
+        }
+      });
+    });
+  </script>
+
+  
+  <script>
+    (async()=>{
+      const nameElement=document.getElementById("navUserName");
+      try{
+        const data=await RainaAPI.request("auth");
+        if(!data.user){location.replace("login.html");return;}
+        const user=data.user, customerName=user.name||user.email?.split("@")[0]||"Customer";
+        nameElement.textContent=customerName;
+        document.getElementById("accountDrawerTitle").textContent=customerName;
+        document.getElementById("accountEmail").textContent=user.email||"Email not available";
+        document.getElementById("accountAvatar").textContent=customerName.trim().charAt(0).toUpperCase()||"R";
+        // Homepage banner slides are managed from Admin and read from MySQL.
+        try{
+          const bannerData=await RainaAPI.request("banners");
+          const bannerList=bannerData.banners||[];
+          if(bannerList.length){
+            const slider=document.getElementById("heroSlider"),dots=document.getElementById("heroDots");
+            slider.innerHTML="";
+            bannerList.forEach((banner,index)=>{
+              const slide=document.createElement("article");slide.className="hero-slide"+(index===0?" is-active":"");
+              slide.style.setProperty("--hero-image",`url("${String(banner.image_url||"").replace(/["\\\\]/g,"")}")`);
+              const copy=document.createElement("div");copy.className="hero-copy";
+              const eyebrow=document.createElement("span");eyebrow.className="hero-eyebrow";eyebrow.textContent="RAINA JEWELS COLLECTION";
+              const title=document.createElement("h1");title.textContent=banner.title||"Discover RAINA JEWELS";
+              const desc=document.createElement("p");desc.textContent="Find your next favourite piece in our latest collection.";
+              const link=document.createElement("a");link.className="hero-cta";link.href=banner.link_url||"shop.html";link.textContent="EXPLORE COLLECTION";
+              copy.append(eyebrow,title,desc,link);slide.append(copy);slider.append(slide);
+            });
+            dots.innerHTML="";
+            bannerList.forEach((banner,index)=>{const dot=document.createElement("button");dot.setAttribute("aria-label",`Show banner ${index+1}`);if(index===0)dot.classList.add("is-active");dots.append(dot);});
+            const slides=[...slider.querySelectorAll(".hero-slide")],dotButtons=[...dots.querySelectorAll("button")];let active=0;
+            const show=index=>{active=(index+slides.length)%slides.length;slides.forEach((el,i)=>el.classList.toggle("is-active",i===active));dotButtons.forEach((el,i)=>el.classList.toggle("is-active",i===active));};
+            document.getElementById("heroPrev").onclick=()=>show(active-1);
+            document.getElementById("heroNext").onclick=()=>show(active+1);
+            dotButtons.forEach((dot,i)=>dot.addEventListener("click",()=>show(i)));
+            if(slides.length>1)setInterval(()=>show(active+1),5000);
+          }
+        }catch(bannerError){console.warn("MySQL banners unavailable:",bannerError);}
+      }catch(error){console.error(error);location.replace("login.html");return;}
+
+      const accountDrawer=document.getElementById("accountDrawer");
+      const accountOverlay=document.getElementById("accountOverlay");
+      const accountOpenBtn=document.getElementById("accountOpenBtn");
+      const closeAccount=()=>{
+        accountDrawer.classList.remove("is-open");accountDrawer.setAttribute("aria-hidden","true");
+        accountOverlay.hidden=true;accountOpenBtn.setAttribute("aria-expanded","false");
+        document.body.classList.remove("account-panel-open");
+      };
+      const openAccount=()=>{
+        accountOverlay.hidden=false;requestAnimationFrame(()=>accountDrawer.classList.add("is-open"));
+        accountDrawer.setAttribute("aria-hidden","false");accountOpenBtn.setAttribute("aria-expanded","true");
+        document.body.classList.add("account-panel-open");
+      };
+      accountOpenBtn.addEventListener("click",openAccount);
+      document.getElementById("accountCloseBtn").addEventListener("click",closeAccount);
+      accountOverlay.addEventListener("click",closeAccount);
+      document.addEventListener("keydown",event=>{if(event.key==="Escape")closeAccount();});
+      document.getElementById("accountLogoutBtn").addEventListener("click",async()=>{
+        try{await RainaAPI.request("logout",{method:"POST",body:{}});location.replace("login.html");}
+        catch(error){alert(error.message||"Could not log out. Please try again.");}
+      });
+      const form=document.getElementById("rainaNewsletterForm"),message=document.getElementById("rainaNewsletterMessage");
+      const year=document.getElementById("rainaFooterYear");if(year)year.textContent=new Date().getFullYear();
+      if(form&&message)form.addEventListener("submit",async event=>{
+        event.preventDefault();const emailInput=document.getElementById("rainaNewsletterEmail");
+        if(!emailInput||!emailInput.checkValidity()){emailInput?.reportValidity();return;}
+        try{const result=await RainaAPI.request("newsletter",{method:"POST",body:{email:emailInput.value.trim()}});
+          message.textContent=result.message||"Thank you for subscribing!";form.reset();}
+        catch(error){message.textContent=error.message||"Subscription failed.";}
+      });
+    })();
+  </script>
+</body>
+</html>

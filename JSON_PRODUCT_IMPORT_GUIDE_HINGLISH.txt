@@ -1,0 +1,20 @@
+RAINA JEWELS - JSON PRODUCT IMPORT
+
+1. XAMPP mein Apache aur MySQL start karein.
+2. http://localhost/RAINA_JEWELS/admin.html open karein aur admin account se login karein.
+3. Products section mein Import JSON button dabayein.
+4. JSON file select karein. Sample ke liye PRODUCT_IMPORT_SAMPLE.json dekhein.
+5. Import confirmation par OK karein.
+6. Successful import ke baad products list refresh hogi aur products MySQL products table mein save honge.
+
+JSON format:
+- File root par JSON array ho sakta hai: [ {...}, {...} ]
+- Ya object: { "products": [ {...}, {...} ] }
+- Required: name (string), category (string), price (number > 0)
+- Optional: mrp (number; default price), stock (integer; default 0), description (string), image_urls (string array; default []).
+- Maximum 200 products per file; JSON file maximum 2 MB.
+- Duplicate slug milne par importer unique slug generate karega; existing product overwrite nahi hoga.
+- Invalid rows skip hongi; valid rows import hongi. Row error details browser Console mein dekhein.
+- Image URLs sirf paths/URLs hain; actual image files ko alag se upload karna hoga. Empty image_urls allowed.
+
+Security: Import API admin session aur CSRF token require karta hai.

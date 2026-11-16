@@ -1,0 +1,35 @@
+RAINA JEWELS — DELIVERY TRACKING + OTP
+======================================
+
+INSTALL FIRST (IMPORTANT)
+1. Back up your database and website folder.
+2. Open http://localhost/phpmyadmin
+3. Select the RAINA JEWELS database from the LEFT sidebar.
+4. Open the SQL tab and run RAINA_DELIVERY_OTP_MIGRATION.sql.
+   Do not run it twice; the ALTER TABLE adds six columns.
+5. Replace website files from this ZIP in C:\xampp\htdocs\RAINA_JEWELS.
+6. Preserve api/config/database.php and api/config/cashfree.php.
+7. Restart Apache and MySQL; sign in as admin.
+
+ADMIN WORKFLOW
+- Open Admin > Orders & Payments.
+- Change order to Processing when prepared.
+- Change order to Shipped when handed to courier.
+- A random 6-digit OTP is generated automatically; customer can view it only in their own My Orders details after login.
+- Save tracking number and expected delivery date in the admin order row.
+- At delivery, ask customer for the OTP and enter it in the OTP field.
+- Click Verify & deliver. Only a correct OTP marks the order Delivered.
+- Admin cannot directly select Delivered in the status dropdown.
+
+CUSTOMER WORKFLOW
+- Customer opens Dashboard > My Orders > View Details.
+- The timeline shows Processed, Shipped, Arrived.
+- After shipping, customer sees tracking number, expected date, and delivery OTP.
+- Customer shares OTP with delivery person at the doorstep. Admin/staff verifies it in Admin > Orders & Payments.
+
+SECURITY / LIMITATIONS
+- OTP is only returned by the authenticated customer's own orders API. Admin order list does not expose the OTP.
+- OTP is six digits and is cleared from the orders table after successful verification.
+- This local PHP project does not currently have SMS/email OTP delivery configured. The code is shown inside the customer's authenticated My Orders page; it is not automatically sent by SMS/email.
+- Do not mark delivered until the customer provides the code.
+- Live database testing was not possible here. Run the migration before testing, or the API will report unknown column errors.

@@ -1,0 +1,16 @@
+RAINA JEWELS COD ORDER FIX v7
+
+This update fixes the COD checkout hanging without a visible explanation:
+- Auth state wait has a 12-second timeout and reports sign-in problems.
+- Firestore order write has a 15-second timeout and displays actionable errors.
+- Successful Firestore writes log the order number and document ID in Console.
+- Existing Firestore orders collection and admin Orders & Payments UI are retained.
+
+IMPORTANT SETUP
+1. In Firebase Console > Firestore Database > Rules, publish the rules in firestore.rules.
+2. Ensure the signed-in customer is using the same Firebase project as firebase.js.
+3. The admin account must have the Firebase custom claim admin=true to list/manage all orders.
+4. Test one order. After success, Firestore > Data > orders should contain a document.
+5. If it fails, read the exact red Console error. This ZIP cannot configure or test your live Firebase project.
+
+The order is only considered placed after Firestore addDoc succeeds. Do not treat a spinner alone as confirmation.

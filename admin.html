@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RAINA JEWELS | Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="admin-dashboard-redesign.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="raina-signature-ui.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">R</span><span>RAINA <small>JEWELS ADMIN</small></span></a>
+    <div class="admin-mini"><div class="avatar" id="adminAvatar">A</div><div><b id="adminName">Admin</b><small id="adminEmail">Loading…</small></div></div>
+    <nav>
+      <button class="nav-link active" data-view="overview"><i data-lucide="layout-dashboard"></i> Overview</button>
+      <button class="nav-link" data-view="products"><i data-lucide="gem"></i> Products</button>
+      <button class="nav-link" data-view="banners"><i data-lucide="images"></i> Banners</button>
+      <button class="nav-link" data-view="orders"><i data-lucide="package"></i> Orders & Payments</button>
+      <button class="nav-link" data-view="customers"><i data-lucide="users"></i> Customers</button>
+      <button class="nav-link" data-view="activity"><i data-lucide="activity"></i> Login activity</button>
+    </nav>
+    <button class="logout" id="logoutBtn"><i data-lucide="log-out"></i> Sign out</button>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Menu"><i data-lucide="menu"></i></button>
+      <div><p class="eyebrow">STORE MANAGEMENT</p><h1 id="pageTitle">Overview</h1></div>
+      <div class="top-right"><span class="live-dot"></span> Live store data <button class="icon-btn" id="refreshBtn" title="Refresh"><i data-lucide="refresh-cw"></i></button></div>
+    </header>
+
+    <section class="view active" id="view-overview">
+      <div class="welcome"><div><p class="eyebrow">WELCOME BACK</p><h2>Store at a glance</h2><p>Track revenue, orders, customers and payments from one place.</p></div><span class="welcome-icon"><i data-lucide="sparkles"></i></span></div>
+      <div class="stats">
+        <article class="stat-card"><div class="stat-top"><span>Total revenue</span><i data-lucide="indian-rupee"></i></div><strong id="totalRevenue">₹0</strong><small>From paid orders</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Total orders</span><i data-lucide="shopping-bag"></i></div><strong id="totalOrders">0</strong><small>All order records</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Customers</span><i data-lucide="users"></i></div><strong id="totalCustomers">0</strong><small>Registered accounts</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Pending payments</span><i data-lucide="clock-3"></i></div><strong id="pendingPayments">0</strong><small>Awaiting payment</small></article>
+      </div>
+      <div class="analytics-grid">
+        <div class="panel chart-panel"><div class="panel-head"><div><h3>Sales overview</h3><p>Order value by recent order</p></div><span class="chart-legend">● Sales</span></div><div id="salesChart" class="sales-chart"><p class="empty">Loading sales data…</p></div></div>
+        <div class="panel chart-panel"><div class="panel-head"><div><h3>Order status</h3><p>Live order distribution</p></div></div><div class="donut-wrap"><div id="statusDonut" class="status-donut"><span id="donutTotal">0</span></div><div id="statusLegend" class="status-legend"></div></div></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div><h3>Recent orders</h3><p>Latest customer purchases</p></div><button class="text-btn" data-goto="orders">View all</button></div>
+        <div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Amount</th><th>Payment</th><th>Status</th></tr></thead><tbody id="recentOrders"><tr><td colspan="6" class="empty">Loading orders…</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="view" id="view-products">
+      <div class="section-head"><div><h2>Products</h2><p>Add, edit or remove jewellery from your store.</p></div><div class="section-actions"><label class="secondary-btn" for="productJsonFile">Import JSON</label><input id="productJsonFile" type="file" accept=".json,application/json" hidden><button class="primary-btn" id="addProductBtn"><i data-lucide="plus"></i> Add product</button></div></div>
+      <p class="upload-hint">JSON import supports up to 200 products per file. Required fields: name, price, category; optional: mrp, stock, description, image_urls.</p><div class="panel"><div class="table-wrap"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead><tbody id="productsRows"><tr><td colspan="5" class="empty">Loading products…</td></tr></tbody></table></div></div>
+    </section>
+
+    <section class="view" id="view-banners">
+      <div class="section-head"><div><h2>Homepage banners</h2><p>Manage the slides shown on your customer dashboard.</p></div><button class="primary-btn" id="addBannerBtn"><i data-lucide="plus"></i> Add banner</button></div>
+      <div class="banner-grid" id="bannerGrid"><p class="empty">Loading banners…</p></div>
+    </section>
+
+    <section class="view" id="view-orders">
+      <div class="section-head"><div><h2>Orders & payments</h2><p>Review orders and update fulfilment/payment status.</p></div></div>
+      <div class="panel"><div class="table-wrap"><table><thead><tr><th>Order ID</th><th>Customer</th><th>Items</th><th>Total</th><th>Payment method</th><th>Payment status</th><th>Confirmation</th><th>Order status / tracking</th><th>Delivery OTP verification</th></tr></thead><tbody id="ordersRows"><tr><td colspan="8" class="empty">Loading orders…</td></tr></tbody></table></div></div>
+    </section>
+
+    <section class="view" id="view-customers">
+      <div class="section-head"><div><h2>Customers</h2><p>Accounts registered in RAINA JEWELS.</p></div></div>
+      <div class="panel"><div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th></tr></thead><tbody id="customersRows"><tr><td colspan="4" class="empty">Loading customers…</td></tr></tbody></table></div></div>
+    </section>
+
+    <section class="view" id="view-activity">
+      <div class="section-head"><div><h2>Login activity</h2><p>Recent successful sign-ins recorded by RAINA JEWELS.</p></div></div>
+      <div class="panel"><div class="table-wrap"><table><thead><tr><th>Customer</th><th>Email</th><th>Login method</th><th>Browser / device</th><th>Time</th></tr></thead><tbody id="activityRows"><tr><td colspan="5" class="empty">Loading activity…</td></tr></tbody></table></div></div>
+    </section>
+  </main>
+
+  <dialog id="productDialog" class="modal">
+    <form id="productForm">
+      <div class="modal-head"><div><p class="eyebrow">CATALOGUE</p><h3 id="productDialogTitle">Add product</h3></div><button type="button" class="icon-btn" data-close="productDialog"><i data-lucide="x"></i></button></div>
+      <input type="hidden" id="productId">
+      <label>Product name<input id="productName" required maxlength="100" placeholder="e.g. Rose Gold Heart Necklace"></label>
+      <div class="form-row"><label>Price (₹)<input id="productPrice" type="number" min="1" required></label><label>MRP (₹)<input id="productMrp" type="number" min="1" required></label></div>
+      <div class="form-row"><label>Category<input id="productCategory" required placeholder="Rings, Earrings…"></label><label>Stock quantity<input id="productStock" type="number" min="0" value="0" required></label></div>
+      <label>Description<textarea id="productDescription" rows="3" placeholder="Product details"></textarea></label>
+      <div class="modal-actions"><button type="button" class="secondary-btn" data-close="productDialog">Cancel</button><button class="primary-btn" type="submit">Save product</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="bannerDialog" class="modal">
+    <form id="bannerForm">
+      <div class="modal-head"><div><p class="eyebrow">HOMEPAGE</p><h3 id="bannerDialogTitle">Add banner</h3></div><button type="button" class="icon-btn" data-close="bannerDialog"><i data-lucide="x"></i></button></div>
+      <input type="hidden" id="bannerId">
+      <label>Banner title<input id="bannerTitle" required placeholder="The new collection is here"></label>
+      <label>Banner images (upload 1–20 images)<input id="bannerImages" type="file" accept="image/*" multiple><small class="upload-hint">Select up to 20 images directly from your computer.</small><div class="upload-preview" id="bannerImagePreview"></div></label>
+      <label>Button/link URL<input id="bannerLink" type="text" placeholder="shop.html"></label>
+      <label class="check-label"><input id="bannerActive" type="checkbox" checked> Active on homepage</label>
+      <div class="modal-actions"><button type="button" class="secondary-btn" data-close="bannerDialog">Cancel</button><button class="primary-btn" type="submit">Save banner</button></div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="api-client.js"></script>
+  <script src="admin-root.js"></script>
+  <script>window.addEventListener('DOMContentLoaded',()=>{if(window.lucide)lucide.createIcons()});</script>
+</body>
+</html>
